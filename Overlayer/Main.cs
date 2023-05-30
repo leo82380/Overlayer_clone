@@ -17,13 +17,6 @@ namespace Overlayer
         public static ModEntry Mod { get; private set; }
         public static ModLogger Logger { get; private set; }
         public static Harmony harmony;
-        public static void Setup(UnityModManager.ModEntry modEntry, bool value)
-        {
-            Logger = modEntry.Logger;
-            modEntry.OnToggle = OnToggle;
-            setting = new Setting();
-            setting = UnityModManager.ModSettings.Load<Setting>(modEntry);
-        }
         public static void Load(ModEntry modEntry)
         {
             Mod = modEntry;
@@ -32,6 +25,10 @@ namespace Overlayer
             modEntry.OnGUI = OnGUI;
             modEntry.OnSaveGUI = OnSaveGUI;
             modEntry.OnUpdate = OnUpdate;
+            Logger = modEntry.Logger;
+            modEntry.OnToggle = OnToggle;
+            setting = new Setting();
+            setting = UnityModManager.ModSettings.Load<Setting>(modEntry);
         }
         public static bool OnToggle(ModEntry modEntry, bool value)
         {

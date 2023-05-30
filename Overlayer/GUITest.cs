@@ -19,7 +19,7 @@ namespace Overlayer
             //button
             if(GUI.Button(new Rect(10,10,10,10), "hello button"))
             {
-                Console.WriteLine("button click!");
+                Debug.Log("button");
             }
 
             float val = 10;
@@ -28,7 +28,7 @@ namespace Overlayer
             if(newVal != val)
             {
                 val = newVal;
-                Console.WriteLine("slider");
+                Debug.Log("slider");
             }
 
             //GUIStyle

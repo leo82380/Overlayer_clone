@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HarmonyLib;
+using UnityEngine;
 
 namespace Overlayer
 {
@@ -13,7 +14,7 @@ namespace Overlayer
         //PreFix
         public static void Prefix()
         {
-            Console.WriteLine("hello world");
+            Debug.Log("hello world");
             return;
         }
     }
