@@ -47,9 +47,16 @@ namespace Overlayer
         }
         public static void OnGUI(ModEntry modEntry)
         {
-            GUITest test = new GameObject().AddComponent<GUITest>();
-            UnityEngine.Object.DontDestroyOnLoad(test);
             GUILayout.Label("Test GUI");
+
+            float val = 10;
+
+            float newVal = GUI.HorizontalSlider(new Rect(10, 10, 10, 10), val, 0, 10);
+            if (newVal != val)
+            {
+                val = newVal;
+                Debug.Log("slider");
+            }
         }
         public static void OnSaveGUI(ModEntry modEntry)
         {

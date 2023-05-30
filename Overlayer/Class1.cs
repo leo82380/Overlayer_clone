@@ -14,8 +14,12 @@ namespace Overlayer
         //PreFix
         public static void Prefix()
         {
-            Debug.Log("hello world");
+            Test();
             return;
+        }
+        public static void Test()
+        {
+            Debug.Log("hello world");
         }
     }
 }

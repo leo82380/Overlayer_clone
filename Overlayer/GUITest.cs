@@ -30,16 +30,6 @@ namespace Overlayer
                 val = newVal;
                 Debug.Log("slider");
             }
-
-            //GUIStyle
-            GUIStyle textStyle = new GUIStyle();
-            textStyle.fontSize = 50;
-            textStyle.alignment = TextAnchor.UpperCenter;
-            textStyle.normal.textColor = Color.white;
-
-            //GUI 생성
-            GUITest test = new GameObject().AddComponent<GUITest>();
-            UnityEngine.Object.DontDestroyOnLoad(test);
         }
     }
 }
