@@ -38,6 +38,22 @@ namespace Overlayer
             {
                 harmony = new Harmony(modEntry.Info.Id);
                 harmony.PatchAll(Assembly.GetExecutingAssembly());
+
+                #region cls name
+                Text text = new GameObject().AddComponent<Text>();
+                text.gameObject.transform.position = Vector3.zero;
+                ADOFAI.LevelData clsName = scnGame.instance.levelData;
+                text.text = clsName.ToString();
+                UnityEngine.Object.DontDestroyOnLoad(text);
+                #endregion
+
+                #region editor name
+                Text text1 = new GameObject().AddComponent<Text>();
+                text1.gameObject.transform.position = new Vector3(0.5f, 0.5f);
+                ADOFAI.LevelData editorName = scnEditor.instance.levelData;
+                text1.text = editorName.ToString();
+                UnityEngine.Object.DontDestroyOnLoad(text1);
+                #endregion
             }
             else
             {
@@ -48,7 +64,6 @@ namespace Overlayer
         public static void OnGUI(ModEntry modEntry)
         {
             GUILayout.Label("Test GUI");
-
             float val = 10;
 
             float newVal = GUI.HorizontalSlider(new Rect(10, 10, 10, 10), val, 0, 10);
